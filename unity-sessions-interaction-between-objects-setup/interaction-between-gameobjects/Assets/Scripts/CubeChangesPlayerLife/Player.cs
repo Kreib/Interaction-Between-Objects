@@ -13,4 +13,16 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 	}
+    private void OnGUI()
+    {
+        if (Life >= 0)
+        {
+            GUILayout.Label("Player Life " + Life);
+        }
+        else
+        {
+            GUILayout.Label("YOU DIED");
+        }
+
+    }
 }

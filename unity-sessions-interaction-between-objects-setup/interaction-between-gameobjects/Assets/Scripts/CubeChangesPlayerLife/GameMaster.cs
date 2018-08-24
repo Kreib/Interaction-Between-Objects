@@ -7,33 +7,24 @@ namespace CubeChangesPlayerLife
 	public class GameMaster : MonoBehaviour {
         // Use this for initialization
         public int Life = 10;
-        public GameObject Sphere;
+        public Player Sphere;
         void Start () {
 
 		}
 
 		// Update is called once per frame
 		void Update () {
-            if (Life <= 0)
+            if (Sphere.Life <= 0)
             {
-                Sphere.SetActive(false);
+
+             
+                Sphere.gameObject.SetActive(false);
             }
 		}
          void OnMouseDown()
         {
-            Life -= 1;
+            Sphere.Life--;
         }
-        private void OnGUI()
-        {
-            if (Life >= 0)
-            {
-                GUILayout.Label("Player Life " + Life);
-            }
-            else
-            {
-                GUILayout.Label("YOU DIED");
-            }
-               
-        }
+       
     }
 }
